@@ -1,10 +1,5 @@
 ﻿using FizzBuzzStrategy.Interfaces;
 using FizzBuzzStrategy.Strategies;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FizzBuzzStrategy.Factories
 {
@@ -14,19 +9,19 @@ namespace FizzBuzzStrategy.Factories
         {
             if (inputNumber % 15 == 0)
             {
-                return new ThreeAndFiveStrategy();
+                return new ThreeAndFiveStrategy(inputNumber);
             }
             else if (inputNumber % 5 == 0)
             {
-                return new FiveStrategy();
+                return new FiveStrategy(inputNumber);
             }
             else if (inputNumber % 3 == 0)
             {
-                return new ThreeStrategy();
+                return new ThreeStrategy(inputNumber);
             }
             else
             {
-                return new StandardStrategy();
+                return new StandardStrategy(inputNumber);
             }
         }
     }
