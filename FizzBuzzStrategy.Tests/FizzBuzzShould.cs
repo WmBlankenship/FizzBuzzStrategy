@@ -1,3 +1,5 @@
+using FizzBuzzStrategy.Factories;
+using FizzBuzzStrategy.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FizzBuzzStrategy.Tests
@@ -10,7 +12,12 @@ namespace FizzBuzzStrategy.Tests
         [DataRow(2)]
         public void Return_String_Representation_Of_Input_Int(int number)
         {
-            var output = Program.Convert(number);
+            var factory = new UpdateStrategyFactory();
+            var strategy = factory.Create(number);
+
+            var conversionService = new NumberConversionService(strategy);
+            var output = conversionService.Convert();
+
             Assert.AreEqual(number.ToString(), output);
         }
 
@@ -19,7 +26,12 @@ namespace FizzBuzzStrategy.Tests
         [DataRow(18)]
         public void Return_Fizz_For_Number_Divisible_By_Three(int number)
         {
-            var output = Program.Convert(number);
+            var factory = new UpdateStrategyFactory();
+            var strategy = factory.Create(number);
+
+            var conversionService = new NumberConversionService(strategy);
+            var output = conversionService.Convert();
+
             Assert.AreEqual("Fizz", output);
         }
 
@@ -28,7 +40,12 @@ namespace FizzBuzzStrategy.Tests
         [DataRow(20)]
         public void Return_Buzz_For_Number_Divisible_By_Five(int number)
         {
-            var output = Program.Convert(number);
+            var factory = new UpdateStrategyFactory();
+            var strategy = factory.Create(number);
+
+            var conversionService = new NumberConversionService(strategy);
+            var output = conversionService.Convert();
+
             Assert.AreEqual("Buzz", output);
         }
 
@@ -37,7 +54,12 @@ namespace FizzBuzzStrategy.Tests
         [DataRow(45)]
         public void Return_FizzBuzz_For_Number_Divisible_By_Three_And_Five(int number)
         {
-            var output = Program.Convert(number);
+            var factory = new UpdateStrategyFactory();
+            var strategy = factory.Create(number);
+
+            var conversionService = new NumberConversionService(strategy);
+            var output = conversionService.Convert();
+
             Assert.AreEqual("FizzBuzz", output);
         }
     }

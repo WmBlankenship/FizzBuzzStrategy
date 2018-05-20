@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\UpdateStrategyFactory.cs" />
+    <Compile Include="Interfaces\INumberConversionService.cs" />
     <Compile Include="Interfaces\IUpdateStrategy.cs" />
     <Compile Include="Interfaces\IUpdateStrategyFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\NumberConversionService.cs" />
     <Compile Include="Strategies\BaseStrategy.cs" />
     <Compile Include="Strategies\FiveStrategy.cs" />
     <Compile Include="Strategies\StandardStrategy.cs" />
